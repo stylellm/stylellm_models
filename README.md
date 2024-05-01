@@ -9,6 +9,8 @@
 
 
 # 新闻
+**[2024/05/01]** 新增4bits量化版模型：[量化模型列表](#%E9%87%8F%E5%8C%96%E6%A8%A1%E5%9E%8B%E5%88%97%E8%A1%A8awq4bits)
+<br>
 **[2024/04/21]** 通用大模型结合文风大模型，探索多样化风格聊天实现：[stylellm_chat](https://github.com/stylellm/stylellm_chat)
 <br>
 **[2024/04/13]** 新增开源红楼梦风格模型权重。
@@ -26,6 +28,18 @@
 | 西游记风格 | 🤗 [stylellm/XiYouJi-6b](https://huggingface.co/stylellm/XiYouJi-6b)  | [inference.py](https://github.com/stylellm/stylellm_models/blob/main/examples/XiYouJi-6b/inference.py)  |
 | 水浒传风格 | 🤗 [stylellm/ShuiHuZhuan-6b](https://huggingface.co/stylellm/ShuiHuZhuan-6b)  | [inference.py](https://github.com/stylellm/stylellm_models/blob/main/examples/ShuiHuZhuan-6b/inference.py)  |
 | 红楼梦风格 | 🤗 [stylellm/HongLouMeng-6b](https://huggingface.co/stylellm/HongLouMeng-6b)  | [inference.py](https://github.com/stylellm/stylellm_models/blob/main/examples/HongLouMeng-6b/inference.py)  |
+<br/>
+
+## 量化模型列表（AWQ，4bits）
+| 风格 | 模型 | 
+|:----------|:----------|
+| 三国演义风格 | 🤗 [stylellm/SanGuoYanYi-6b-AWQ](https://huggingface.co/stylellm/SanGuoYanYi-6b-AWQ)  |
+| 西游记风格 | 🤗 [stylellm/XiYouJi-6b-AWQ](https://huggingface.co/stylellm/XiYouJi-6b-AWQ)  |
+| 水浒传风格 | 🤗 [stylellm/ShuiHuZhuan-6b-AWQ](https://huggingface.co/stylellm/ShuiHuZhuan-6b-AWQ)  |
+| 红楼梦风格 | 🤗 [stylellm/HongLouMeng-6b-AWQ](https://huggingface.co/stylellm/HongLouMeng-6b-AWQ)  |
+> **注意：**<br/>
+> 使用AWQ量化模型前需安装[AutoAWQ](https://github.com/casper-hansen/AutoAWQ)：pip install autoawq <br/>
+> 量化后的模型占用显存4.2GB，适用于较小的显卡使用，但风格表达能力有所下降，追求完整效果的场景请使用[量化前版本](#模型列表)
 
 # 效果演示
 以《白雪公主》原文作为输入，以下是不同风格模型的改写结果。
