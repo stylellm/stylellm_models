@@ -8,14 +8,11 @@
 利用**stylellm**模型可将学习到的风格移植至其他通用文本上，即：输入一段原始文本，模型可对其改写，输出带有该风格特色的文本，达到文字修饰、润色或风格模仿的效果。
 
 
-# 新闻
-**[2024/05/01]** 新增4bits量化版模型：[量化模型列表](#%E9%87%8F%E5%8C%96%E6%A8%A1%E5%9E%8B%E5%88%97%E8%A1%A8awq4bits)
-<br>
-**[2024/04/21]** 通用大模型结合文风大模型，探索多样化风格聊天实现：[stylellm_chat](https://github.com/stylellm/stylellm_chat)
-<br>
-**[2024/04/13]** 新增开源红楼梦风格模型权重。
-<br>
-**[2024/04/03]** 新增开源水浒传风格模型权重。
+# 项目内容
+
+- 📚 [四大名著风格模型](#模型列表) ([量化版本](#%E9%87%8F%E5%8C%96%E6%A8%A1%E5%9E%8B%E5%88%97%E8%A1%A8awq4bits))
+- ↔️ [风格转化效果](#风格转化效果)
+- 💬 [风格化聊天效果](#风格化聊天效果)
 
 
 # 模型列表
@@ -41,7 +38,7 @@
 > 使用AWQ量化模型前需安装[AutoAWQ](https://github.com/casper-hansen/AutoAWQ)：pip install autoawq <br/>
 > 量化后的模型占用显存4.2GB，适用于较小的显卡使用，但风格表达能力有所下降，追求完整效果的场景请使用[量化前版本](#模型列表)
 
-# 效果演示
+# 风格转化效果
 以《白雪公主》原文作为输入，以下是不同风格模型的改写结果。
 
 | 原文 - 《白雪公主》     | 改写-三国演义风格 | 改写-西游记风格 | 改写-水浒传风格 | 改写-红楼梦风格 |
@@ -60,6 +57,19 @@
 <br />
   
     
+
+# 风格化聊天效果
+利用StyleLLM模型对ChatGPT等通用大模型的输出进行风格改写，可改变对话风格单一、AI味过重的状况。（详细介绍见
+[StyleLLM-Chat](https://github.com/stylellm/stylellm_chat)）
+
+### "水浒传-鲁智深"对话风格效果：
+![demo1](https://github.com/stylellm/stylellm_chat/blob/main/%20assets/gradio_chat_1.png)
+![demo2](https://github.com/stylellm/stylellm_chat/blob/main/%20assets/gradio_chat_2.png)
+
+### 在Colab中快速对话：
+[打开Colab](https://colab.research.google.com/github/stylellm/stylellm_chat/blob/main/colab_web_demo_gradio.ipynb) 
+
+
 # 使用方法
 
 ```python
@@ -74,6 +84,7 @@ response = tokenizer.decode(output_ids[0][input_ids.shape[1]:], skip_special_tok
 print("Output:", response)
 # Output: 时值隆冬，大雪压境，王后坐于王宫之窗下，正与女作绣，寒风入室，吹落乌木窗台之雪。
 ```
+
 
 # 致谢
 本项目在模型训练中借助了下列开源项目，在此对相关项目人员表示诚挚感谢：
